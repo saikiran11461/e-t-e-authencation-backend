@@ -11,7 +11,8 @@ const authentication = (req,res,next) =>{
          if (err) {
                 return res.status(401).send({ error: "Invalid or expired token. Please login again." });
             }
-            req.user = decoded;
+           
+            req.user = decoded.id;
       
             next();
     })

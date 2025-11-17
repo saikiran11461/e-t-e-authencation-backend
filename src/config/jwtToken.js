@@ -4,12 +4,12 @@ require("dotenv").config();
 
 
  const accessToken = (id) =>{
-   return jwt.sign({id:id}, process.env.SECRETKEY, {expiresIn:60});
+   return jwt.sign({id:id}, process.env.SECRETKEY, {expiresIn:"5h"});
 }
 
 
 const refreshTokens = (id)=>{
-    return jwt.sign({id:id}, process.env.REFRESH_SECRETKEY, {expiresIn:180})
+    return jwt.sign({id:id}, process.env.REFRESH_SECRETKEY, {expiresIn:"10h"})
 }
 
 

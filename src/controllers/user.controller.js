@@ -7,7 +7,7 @@ require("dotenv").config()
 const userController = {
 
     getUsers: async (req,res)=>{
-        console.log("cookies ",req.cookies)
+        
         try {
             const users = await userModle.find();
             return res.status(200).send({message:"succes", users})
@@ -60,7 +60,6 @@ const userController = {
             httpOnly:true,
             secure: false,       
             sameSite: "lax",
-            maxAge: 7 * 60 * 60 * 1000
 
            })
 
@@ -68,7 +67,6 @@ const userController = {
             httpOnly:true,
             secure: false,       
             sameSite: "lax",
-            maxAge: 7 * 60 * 60 * 1000
 
            })
 
@@ -95,7 +93,6 @@ const userController = {
                 httpOnly:true,
                 secure: false,       
                 sameSite: "lax",
-                expireIn:7*60*60*1000
             })
 
             return res.status(201).send({message:"new token was generated"})
