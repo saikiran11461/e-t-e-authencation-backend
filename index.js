@@ -9,13 +9,18 @@ require("dotenv").config()
 const app = express();
 
 app.use(express.json())
+app.use(cookieParser());
 
 app.use(cors({
 origin: "https://e-t-e-authencation-frontend.vercel.app",  
   credentials: true,      
 }))
 
-app.use(cookieParser());
+
+app.use((req, res, next) => {
+  console.log("Incoming cookies:", req.cookies);
+  next();
+});
 
 app.use("/users",userRouter);
 app.use("/tasks", taskRouter)

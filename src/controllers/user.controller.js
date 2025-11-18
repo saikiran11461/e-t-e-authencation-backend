@@ -59,14 +59,14 @@ const userController = {
            res.cookie("accessToken", token, {
             httpOnly:true,
             secure: true,       
-            sameSite: "lax",
+            sameSite: "None",
 
            })
 
             res.cookie("refreshToken", refreshToken, {
             httpOnly:true,
             secure: true,       
-            sameSite: "lax",
+           sameSite: "None",
 
            })
 
@@ -91,8 +91,8 @@ const userController = {
 
              res.cookie("accessToken", newToken,{
                 httpOnly:true,
-                secure: false,       
-                sameSite: "lax",
+                secure: true,       
+                sameSite: "None",
             })
 
             return res.status(201).send({message:"new token was generated"})
