@@ -58,14 +58,14 @@ const userController = {
 
            res.cookie("accessToken", token, {
             httpOnly:true,
-            secure: false,       
+            secure: true,       
             sameSite: "lax",
 
            })
 
             res.cookie("refreshToken", refreshToken, {
             httpOnly:true,
-            secure: false,       
+            secure: true,       
             sameSite: "lax",
 
            })
